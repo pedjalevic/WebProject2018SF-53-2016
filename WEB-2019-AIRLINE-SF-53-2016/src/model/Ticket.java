@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Date;
 
 public class Ticket {
 	private int id;
@@ -8,8 +7,8 @@ public class Ticket {
 	private Flight returnFlight;
 	private int departureSeat;
 	private int returnSeat;
-	private Date reservationDate;
-	private Date sellDate;
+	private String reservationDate;
+	private String sellDate;
 	private User ticketUser;
 	private String passengerName;
 	private String passengerLastName;
@@ -17,7 +16,7 @@ public class Ticket {
 	
 	
 	public Ticket(int id, Flight departureFlight, Flight returnFlight, int departureSeat, int returnSeat,
-			Date reservationDate, Date sellDate, User ticketUser, String passengerName, String passengerLastName,
+			String reservationDate, String sellDate, User ticketUser, String passengerName, String passengerLastName,
 			boolean deleted) {
 		super();
 		this.id = id;
@@ -84,22 +83,22 @@ public class Ticket {
 	}
 
 
-	public Date getReservationDate() {
+	public String getReservationDate() {
 		return reservationDate;
 	}
 
 
-	public void setReservationDate(Date reservationDate) {
+	public void setReservationDate(String reservationDate) {
 		this.reservationDate = reservationDate;
 	}
 
 
-	public Date getSellDate() {
+	public String getSellDate() {
 		return sellDate;
 	}
 
 
-	public void setSellDate(Date sellDate) {
+	public void setSellDate(String sellDate) {
 		this.sellDate = sellDate;
 	}
 

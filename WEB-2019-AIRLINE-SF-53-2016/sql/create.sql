@@ -23,32 +23,33 @@ arrivalDate DATETIME not null,
 departureAirport bigint not null,
 arrivalAirport bigint not null,
 seatNumber bigint not null,
+freeSeat  bigint not null,
 ticketPrice double not null,
 deleted BOOLEAN NOT NULL DEFAULT FALSE,
 primary key (id),
 FOREIGN KEY (departureAirport) REFERENCES airports(id) ON DELETE restrict,
 FOREIGN KEY (arrivalAirport) REFERENCES airports(id) ON DELETE restrict
 );
-insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,ticketPrice) values
-('1NTSAU','2018-12-14 16:54:00','2018-12-14 17:54:00',1,2,180,15.40);
-insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,ticketPrice) values
-('1NTSHL','2018-12-14 16:21:00','2018-12-14 17:24:00',1,3,250,11.70);
-insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,ticketPrice) values
-('1HTAU','2018-12-14 16:26:00','2018-12-14 17:32:00',4,2,500,10.40);
-insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,ticketPrice) values
-('1CDGPHT','2018-12-14 16:29:00','2018-12-14 17:58:00',5,4,300,22.40);
-insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,ticketPrice) values
-('2CDGPHT','2018-12-15 16:29:00','2018-12-15 17:58:00',5,4,300,22.40);
-insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,ticketPrice) values
-('2NTSAU','2019-12-14 16:54:00','2019-12-14 17:54:00',1,2,180,15.40);
-insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,ticketPrice) values
-('2NTSHL','2019-12-14 16:21:00','2019-12-14 17:24:00',1,3,250,11.70);
-insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,ticketPrice) values
-('2HTAU','2019-12-14 16:26:00','2019-12-14 17:32:00',4,2,500,10.40);
-insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,ticketPrice) values
-('1AUHL','2019-12-14 16:26:00','2019-12-14 17:32:00',4,2,500,10.40);
-insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,ticketPrice) values
-('2AUHL','2019-12-15 16:26:00','2019-12-15 17:32:00',4,2,500,10.40);
+insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,freeSeat,ticketPrice) values
+('1NTSAU','2018-12-14 16:54:00','2018-12-14 17:54:00',1,2,180,180,15.40);
+insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,freeSeat,ticketPrice) values
+('1NTSHL','2018-12-14 16:21:00','2018-12-14 17:24:00',1,3,250,250,11.70);
+insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,freeSeat,ticketPrice) values
+('1HTAU','2018-12-14 16:26:00','2018-12-14 17:32:00',4,2,500,500,10.40);
+insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,freeSeat,ticketPrice) values
+('1CDGPHT','2018-12-14 16:29:00','2018-12-14 17:58:00',5,4,300,300,22.40);
+insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,freeSeat,ticketPrice) values
+('2CDGPHT','2018-12-15 16:29:00','2018-12-15 17:58:00',5,4,300,300,22.40);
+insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,freeSeat,ticketPrice) values
+('2NTSAU','2019-12-14 16:54:00','2019-12-14 17:54:00',1,2,180,180,15.40);
+insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,freeSeat,ticketPrice) values
+('2NTSHL','2019-12-14 16:21:00','2019-12-14 17:24:00',1,3,250,250,11.70);
+insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,freeSeat,ticketPrice) values
+('2HTAU','2019-12-14 16:26:00','2019-12-14 17:32:00',4,2,500,500,10.40);
+insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,freeSeat,ticketPrice) values
+('1AUHL','2019-12-14 16:26:00','2019-12-14 17:32:00',4,2,500,500,10.40);
+insert into flights(flightNumber,departureDate,arrivalDate,departureAirport,arrivalAirport,seatNumber,freeSeat,ticketPrice) values
+('2AUHL','2019-12-15 16:26:00','2019-12-15 17:32:00',4,2,500,500,10.40);
 
 
 

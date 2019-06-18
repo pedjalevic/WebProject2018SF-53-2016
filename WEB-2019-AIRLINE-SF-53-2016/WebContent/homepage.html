@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,
+	initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/homepage.css">
+	<script type="text/javascript" src="jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/homepage.js"></script>
+
+	<title>Super Air</title>
+	<link rel="icon" href="photos/logo1.png">
+</head>
+<body>
+	<nav class="topnav">
+		<a href="homepage.html" id="logo"> <img src="photos/logo1.png" class="logo" alt="logo"> <font size="22">Super Air</font></a>
+		<a href="#signIn" id="signInLink" onclick="openNav()">Sign In</a>
+		<a href="homepage.html" id="home">Home</a>
+	</nav>
+	<div id="mySidelogin" class="sidelogin">
+ 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  		<label><b>Username</b></label>
+    	<input type="text" placeholder="Enter Username" name="userName" id="userName" required>
+ 		<label><b>Password</b></label>
+	    <input type="password" placeholder="Enter Password" id="password" name="password" required>
+	    <a id="signup" href="registerpage.html"><b>Sign Up</b></a>
+	    <p id="message"></p>
+	    <input type="submit" class="signIn" id="signIn" value="Sign In">
+	</div>
+	<section class="bodysection">
+		<aside id="myAsideSearch" class="myAsideSearch">
+
+			<form action="/action_page.php">
+				<label for="departureAirportList">Airport:</label>
+				<br>
+	  			<select class="form-group col-xs-6 input-sm" id="departureAirportList">
+	  			</select>
+	  			<select class="form-group col-xs-6 input-sm" id="arrivalAirportList">
+				</select>
+			</form>
+			<br><br>
+			<label for="price1">Price:</label>
+			<br>
+	  		<input class="form-group col-xs-6 input-sm" type="number" name="Price" step="any" min="0" id="price1">
+	  		<input class="form-group col-xs-6 input-sm" type="number" name="Price2" step="any">
+	  		<br><br>
+	  		<label>Data:</label>
+	  		<br>
+	  		<input class="form-group col-xs-6 input-sm" type="datetime-local" name="Data">
+	  		<input class="form-group col-xs-6 input-sm" type="datetime-local" name="Data2">
+	  		<br><br>
+	  		<label>Order by:</label>
+	  		<br>
+	  		<select class="form-group col-xs-6 input-sm" id="orderby">
+	  			<option>Flight number</option>
+	  			<option>Departure date</option>
+	  			<option>Arrival date</option>
+	  			<option>Departure airport</option>
+	  			<option>Arrival airport</option>
+	  			<option>Seat number</option>
+	  			<option>Ticket price</option>
+			</select>
+			<select class="form-group col-xs-6 input-sm" id="ascdes">
+				<option>Ascending</option>
+				<option>Descending</option>
+			</select>
+			<br><br>
+			<label>Flight number:</label>
+			<br>
+			<input class="form-group col-xs-6 input-sm" type="text" name="FlightNumber" id="flightNumber">
+			<input class="form-group col-xs-6 input-sm" type="button" name="searchAirport" id="searchAirport" value="Search airports">
+		</aside>
+		<article>
+			<div>
+				<table style="width:100%" class="airlineTable" id="airlineTable">
+				  <tr>
+				    <th>Flight number</th>
+				    <th>Departure date</th> 
+				    <th>Arrival date</th>
+				    <th>Departure airport</th>
+				    <th>Arrival airport</th>
+				    <th>Seat number</th>
+				    <th>Ticket price</th>
+				  </tr>
+				</table>
+			</div>
+		</article>
+	</section>
+	<footer class="footer-container">
+		<section class="notice">
+			<p class="rights">Copyright Super Air All Rights Reserved </br>
+			Super Air is at the very top of online travel & related services.</p>
+		</section>
+		<section class="social-links">
+			<i class="fa fa-facebook-square" style="font-size:36px;margin-left: 7%;"></i>
+			<i class="fa fa-instagram" style="font-size:36px"></i>
+			<i class="fa fa-linkedin-square" style="font-size:36px"></i>
+			<i class="fa fa-twitter" style="font-size:36px"></i>
+			<i class="fa fa-car"style="font-size:36px"></i>
+			<i class="fa fa-bed"style="font-size:36px"></i>
+		</section>
+	</footer>
+</body>
+</html>

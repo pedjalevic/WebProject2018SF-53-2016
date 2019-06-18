@@ -1,20 +1,20 @@
 package model;
 
-import java.sql.Date;
 
 public class Flight {
 	private int id;
 	private String flightNumber;
-	private Date departureDate;
-	private Date arrivalDate;
+	private String departureDate;
+	private String arrivalDate;
 	private Airport departureAirport;
 	private Airport arrivalAirport;
 	private int seatNumber;
+	private int freeSeat;
 	private double ticketPrice;
 	private boolean deleted;
 	
-	public Flight(int id, String flightNumber, Date departureDate, Date arrivalDate, Airport departureAirport,
-			Airport arrivalAirport, int seatNumber, double ticketPrice, boolean deleted) {
+	public Flight(int id, String flightNumber, String departureDate, String arrivalDate, Airport departureAirport,
+			Airport arrivalAirport, int seatNumber, int freeSeat, double ticketPrice, boolean deleted) {
 		super();
 		this.id = id;
 		this.flightNumber = flightNumber;
@@ -23,6 +23,7 @@ public class Flight {
 		this.departureAirport = departureAirport;
 		this.arrivalAirport = arrivalAirport;
 		this.seatNumber = seatNumber;
+		this.freeSeat = freeSeat;
 		this.ticketPrice = ticketPrice;
 		this.deleted = deleted;
 	}
@@ -43,19 +44,19 @@ public class Flight {
 		this.flightNumber = flightNumber;
 	}
 
-	public Date getDepartureDate() {
+	public String getDepartureDate() {
 		return departureDate;
 	}
 
-	public void setDepartureDate(Date departureDate) {
+	public void setDepartureDate(String departureDate) {
 		this.departureDate = departureDate;
 	}
 
-	public Date getArrivalDate() {
+	public String getArrivalDate() {
 		return arrivalDate;
 	}
 
-	public void setArrivalDate(Date arrivalDate) {
+	public void setArrivalDate(String arrivalDate) {
 		this.arrivalDate = arrivalDate;
 	}
 
@@ -82,6 +83,13 @@ public class Flight {
 	public void setSeatNumber(int seatNumber) {
 		this.seatNumber = seatNumber;
 	}
+	public int getFreeSeat() {
+		return freeSeat;
+	}
+
+	public void setFreeSeat(int freeSeat) {
+		this.freeSeat = freeSeat;
+	}
 
 	public double getTicketPrice() {
 		return ticketPrice;
@@ -103,8 +111,8 @@ public class Flight {
 	public String toString() {
 		return "Flight [id=" + id + ", flightNumber=" + flightNumber + ", departureDate=" + departureDate
 				+ ", arrivalDate=" + arrivalDate + ", departureAirport=" + departureAirport + ", arrivalAirport="
-				+ arrivalAirport + ", seatNumber=" + seatNumber + ", ticketPrice=" + ticketPrice + ", deleted="
-				+ deleted + "]";
+				+ arrivalAirport + ", seatNumber=" + seatNumber + ", freeSeat=" + freeSeat + ", ticketPrice="
+				+ ticketPrice + ", deleted=" + deleted + "]";
 	}
 	
 }

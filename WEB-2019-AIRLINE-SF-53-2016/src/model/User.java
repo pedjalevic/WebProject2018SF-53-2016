@@ -1,6 +1,5 @@
 package model;
 
-import java.sql.Date;
 
 public class User {
 	public enum Role {
@@ -8,17 +7,16 @@ public class User {
 	};
 	
 	private int id;
-	private String userName;
+	private String username;
 	private String userPassword;
-	private Date registrationDate;
+	private String registrationDate;
 	private Role role;
 	private boolean blocked;
 	private boolean deleted;
-	public User(int id, String userName, String userPassword, Date registrationDate, Role role, boolean blocked,
+	public User(String username, String userPassword, String registrationDate, Role role, boolean blocked,
 			boolean deleted) {
 		super();
-		this.id = id;
-		this.userName = userName;
+		this.username = username;
 		this.userPassword = userPassword;
 		this.registrationDate = registrationDate;
 		this.role = role;
@@ -32,10 +30,10 @@ public class User {
 		this.id = id;
 	}
 	public String getUserName() {
-		return userName;
+		return username;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserName(String username) {
+		this.username = username;
 	}
 	public String getUserPassword() {
 		return userPassword;
@@ -43,10 +41,10 @@ public class User {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-	public Date getRegistrationDate() {
+	public String getRegistrationDate() {
 		return registrationDate;
 	}
-	public void setRegistrationDate(Date registrationDate) {
+	public void setRegistrationDate(String registrationDate) {
 		this.registrationDate = registrationDate;
 	}
 	public Role getRole() {
@@ -69,7 +67,7 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", userPassword=" + userPassword + ", registrationDate="
+		return "User [username=" + username + ", userPassword=" + userPassword + ", registrationDate="
 				+ registrationDate + ", role=" + role + ", blocked=" + blocked + ", deleted=" + deleted + "]";
 	}
 
