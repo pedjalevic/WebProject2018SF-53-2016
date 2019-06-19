@@ -6,9 +6,9 @@
 	initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/registerpage.css">
+	<link rel="stylesheet" type="text/css" href="css/edituseradmin.css">
 	<script type="text/javascript" src="jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="js/registerpage.js"></script>
+	<script type="text/javascript" src="js/edituseradmin.js"></script>
 
 	<title>Super Air</title>
 	<link rel="icon" href="photos/logo1.png">
@@ -16,32 +16,48 @@
 <body>
 	<nav class="topnav">
 		<a href="homepage.html" id="logo"> <img src="photos/logo1.png" class="logo" alt="logo"> <font size="22">Super Air</font></a>
+		<a href="LogOutServlet" id="signoutLink" onclick="signout()">Sign Out</a>
 		<a href="homepage.html" id="home">Home</a>
 	</nav>
 	<div class="container">
-		<div class="signup">
-			<h2>Sign Up</h2>
+		<div class="userInfo">
+			<h2>User Info</h2>
 		</div>
 		<div>
 			<p>User name</p>
 		</div>
 		<div>
-			 <input type="text" id="userName" name="userName" required>
+			<input type="text" id="name" name="name" required="required">
 		</div>
 		<div>
 			<p>Password</p>
 		</div>
 		<div>
-			<input type="password" id="password" name="password" required>
-		</div>
-		<div class="signup">
-			<p id="message" class="message"></p>
+			<input type="password" id="password" name="password" required="required">
 		</div>
 		<div>
-			<button type="submit" class="signupbtn" id="submit">Sign Up</button>
+			<p>Blocked</p>
+		</div>
+		<div>
+			<input type="checkbox" id="blocked">
+			  <span class="checkmark"></span>
+		</div>
+		<div class="userInfo">
+			<p id="message"></p>
+		</div>
+		<div>
+			<input type="submit" value="Submit" id="submit">
 		</div>
 		<div>
 			<button type="button" class="cancelbtn" id="cancel" onclick="btnCancel()">Cancel</button>
+		</div>
+		<div>
+			<p>Role</p>
+		</div>
+		<div>
+			<select id="role" name="role">
+				<option value="user">User</option>
+				<option value="admin">Admin</option>
 		</div>
 	</div>
 </body>

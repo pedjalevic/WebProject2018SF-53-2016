@@ -13,9 +13,10 @@ public class User {
 	private Role role;
 	private boolean blocked;
 	private boolean deleted;
-	public User(String username, String userPassword, String registrationDate, Role role, boolean blocked,
+	public User(int id, String username, String userPassword, String registrationDate, Role role, boolean blocked,
 			boolean deleted) {
 		super();
+		this.id = id;
 		this.username = username;
 		this.userPassword = userPassword;
 		this.registrationDate = registrationDate;
@@ -23,6 +24,7 @@ public class User {
 		this.blocked = blocked;
 		this.deleted = deleted;
 	}
+	
 	public int getId() {
 		return id;
 	}
@@ -65,10 +67,12 @@ public class User {
 	public void setDeleted(boolean deleted) {
 		this.deleted = deleted;
 	}
+
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", userPassword=" + userPassword + ", registrationDate="
+		return "User [id=" + id + ", username=" + username + ", userPassword=" + userPassword + ", registrationDate="
 				+ registrationDate + ", role=" + role + ", blocked=" + blocked + ", deleted=" + deleted + "]";
 	}
+	
 
 }

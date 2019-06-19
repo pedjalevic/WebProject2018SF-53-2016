@@ -18,6 +18,7 @@
 		<a href="homepage.html" id="logo"> <img src="photos/logo1.png" class="logo" alt="logo"> <font size="22">Super Air</font></a>
 		<a href="#signIn" id="signInLink" onclick="openNav()">Sign In</a>
 		<a href="homepage.html" id="home">Home</a>
+		<a style="display: none;" href="addFlight.html" id="addFlight" >Add Flight</a>
 	</nav>
 	<div id="mySidelogin" class="sidelogin">
  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -43,8 +44,8 @@
 			<br><br>
 			<label for="price1">Price:</label>
 			<br>
-	  		<input class="form-group col-xs-6 input-sm" type="number" name="Price" step="any" min="0" id="price1">
-	  		<input class="form-group col-xs-6 input-sm" type="number" name="Price2" step="any">
+	  		<input class="form-group col-xs-6 input-sm" type="number" min="0" max="10000" name="Price" step="any" min="0" id="price1">
+	  		<input class="form-group col-xs-6 input-sm" type="number" min="0" max="10000" name="Price2" step="any">
 	  		<br><br>
 	  		<label>Data:</label>
 	  		<br>

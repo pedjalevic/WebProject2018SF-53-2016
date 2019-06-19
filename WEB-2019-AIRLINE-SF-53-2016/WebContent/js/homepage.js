@@ -9,6 +9,8 @@ $(document).ready(function() {
 	var userNameInput = $("input[name='userName']");
 	var passwordInput = $("input[name='password']");
 	var messageParagraph = $('#message');
+	var addFlight = $('#addFlight');
+	var topnav = $('.topnav');
 	$.get('GetFlightsServlet',{},function(data){
 		console.log(JSON.stringify(data));
 		for (ai in data.airports) {
@@ -36,7 +38,12 @@ $(document).ready(function() {
 		    }
 		    if(data.user !=null){
 				$('#signInLink').replaceWith('<a href="LogOutServlet">Sign out</a>');
-				$('#home').replaceWith('<a href="User.html?userName='+data.user.userName+'">My profile</a>');
+				if (data.user.role == "ADMIN") {
+					$('#home').replaceWith('<a href="adminpage.html?userName='+data.user.userName+'">Admin page</a>');
+					$('#addFlight').replaceWith('<a href="addFlight.html" id="addFlight" >Add Flight</a>');
+				}else if (data.user.role == "USER") {
+					$('#home').replaceWith('<a href="userpage.html?userName='+data.user.userName+'">My profile</a>');
+				}
 		}
 
 		});
@@ -66,7 +73,7 @@ $(document).ready(function() {
 
 			if (data.status == 'success') {
 				console.log('Uspelo');
-				window.location.replace('User.html?userName='+userName);
+				window.location.replace('userpage.html?userName='+userName);
 			}
 			if (data.status == 'failure') {
 			messageParagraph.text("Wrong username or password");

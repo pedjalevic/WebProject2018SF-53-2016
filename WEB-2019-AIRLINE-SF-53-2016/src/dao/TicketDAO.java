@@ -19,13 +19,13 @@ public class TicketDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		try {
-			String query = "SELECT * FROM tickets WHERE ticketUser = ? AND sellDate is null AND deleted = ?";
+			String query = "SELECT * FROM tickets WHERE ticketUser = ? AND sellDate is null AND deleted = ?  order by reservationDate desc";
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, id);
 			pstmt.setBoolean(2, false);
 			rset = pstmt.executeQuery();
 
-			if (rset.next()) {
+			while (rset.next()) {
 				int index = 2;
 				int f1 = rset.getInt(index++);
 				Flight departureFlight = FlightDAO.getFlight(f1);
@@ -70,13 +70,12 @@ public class TicketDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		try {
-			String query = "SELECT * FROM tickets WHERE ticketUser = ? AND sellDate is not null AND deleted = ?";
+			String query = "SELECT * FROM tickets WHERE ticketUser = ? AND sellDate is not null order by sellDate desc;";
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, id);
-			pstmt.setBoolean(2, false);
 			rset = pstmt.executeQuery();
 
-			if (rset.next()) {
+			while (rset.next()) {
 				int index = 2;
 				int f1 = rset.getInt(index++);
 				Flight departureFlight = FlightDAO.getFlight(f1);

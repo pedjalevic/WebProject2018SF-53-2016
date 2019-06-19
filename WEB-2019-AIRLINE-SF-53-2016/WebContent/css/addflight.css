@@ -47,14 +47,14 @@ body{
   grid-gap: 10px;
   margin-top: 1%;
 }
-.signup {
+#departureAirport #arrivalAirport{
+  height: 100%;
+}
+.flightInfo {
   grid-column: 1 / span 2;
   text-align: center;
 }
-.message {
-  grid-column: 1 / span 2;
-  text-align: center;
-}
+
 .container div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -63,10 +63,12 @@ body{
 }
 .container div input {
   width: 50%;
-  text-align: center;
   background-color: #2196F3;
-}
 
+}
+.container div input:hover {
+  opacity: 0.6;
+}
 .container div button {
   width: 50%;
   height: 50%;
@@ -75,4 +77,3 @@ body{
 }
 .container div button:hover {
   opacity: 0.6;
-}

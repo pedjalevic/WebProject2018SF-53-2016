@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width,
 	initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/adminpage.css">
 	<script type="text/javascript" src="jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="js/adminpage.js"></script>
@@ -14,16 +15,20 @@
 </head>
 <body>
 	<nav class="topnav">
-		<a href="adminpage.html" id="logo"> <img src="photos/logo1.png" class="logo" alt="logo"> <font size="22">Super Air</font></a>
+		<a href="homepage.html" id="logo"> <img src="photos/logo1.png" class="logo" alt="logo"> <font size="22">Super Air</font></a>
 		<a href="#signout" id="signoutLink" onclick="signout()">Sign Out</a>
-		<a href="adminpage.html" id="home">Home</a>
-		<div class="search-container">
-			<form>
-				<input type="text" placeholder="Search flights" name="search" size="30">
-				<input type="button" id="searchButt" value="Search">
-			</form>
-		</div>
+		<a href="homepage.html" id="home">Home</a>
+		<a href="adminpage.html" id="home">AdminPage</a>
 	</nav>
-
+	<div class="container">
+		<table style="width:100%" class="userTable" id="userTable">
+			<tr>
+				<th>User name</th>
+				<th>Registration date</th> 
+				<th>Role</th>
+				<th>Delete</th>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>

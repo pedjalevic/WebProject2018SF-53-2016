@@ -78,6 +78,6 @@ table, th, td {
   text-align: center;
   float: left;
 }
-th {
+th,td {
   width: 100%;
 }

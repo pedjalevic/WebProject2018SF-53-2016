@@ -31,10 +31,11 @@ public class RegisterServlet extends HttpServlet {
 		String userPassword = request.getParameter("password");
 		try {
 			User user = UserDAO.get(username);
+			int id = UserDAO.getUserId();
 			if (user != null) throw new Exception("Error");
 			Date d=new Date();
 			String date=FlightDAO.dateToStringForWrite(d);
-			User newUser=new User(username, userPassword, date, Role.USER, false, false);
+			User newUser=new User(id, username, userPassword, date, Role.USER, false, false);
 			UserDAO.addUser(newUser);
 			Map<String, Object> data = new HashMap<>();
 			data.put("status", "success");
