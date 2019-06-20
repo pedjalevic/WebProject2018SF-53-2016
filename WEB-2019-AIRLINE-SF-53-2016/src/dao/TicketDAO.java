@@ -64,6 +64,73 @@ public class TicketDAO {
 		return tickets;
 	}
 	
+	public static int getTicketNumber(int id) {
+		Connection conn = ConnectionManager.getConnection();
+		int number=0;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		try {
+			String query = "SELECT count(departureFlight) FROM tickets where departureFlight = ?";
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, id);
+			rset = pstmt.executeQuery();
+		
+			if (rset.next()) {
+				number=rset.getInt(1);
+				
+			}
+			return number;
+		} catch (Exception ex) {
+			System.out.println("Greska u SQL upitu!");
+			ex.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+			} catch (SQLException ex1) {
+				ex1.printStackTrace();
+			}
+			try {
+				rset.close();
+			} catch (SQLException ex1) {
+				ex1.printStackTrace();
+			}
+		}
+		return 0;
+	}
+	public static int getTicketNumber1(int id) {
+		Connection conn = ConnectionManager.getConnection();
+		int number1=0;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		try {
+			String query = "SELECT count(returnFlight) FROM tickets where returnFlight = ?";
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, id);
+			rset = pstmt.executeQuery();
+		
+			if (rset.next()) {
+				number1=rset.getInt(1);
+				
+			}
+			return number1;
+		} catch (Exception ex) {
+			System.out.println("Greska u SQL upitu!");
+			ex.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+			} catch (SQLException ex1) {
+				ex1.printStackTrace();
+			}
+			try {
+				rset.close();
+			} catch (SQLException ex1) {
+				ex1.printStackTrace();
+			}
+		}
+		return 0;
+	}
+	
 	public static ArrayList<Ticket> getUserSell(int id) {
 		Connection conn = ConnectionManager.getConnection();
 		ArrayList<Ticket> tickets = new ArrayList<Ticket>();

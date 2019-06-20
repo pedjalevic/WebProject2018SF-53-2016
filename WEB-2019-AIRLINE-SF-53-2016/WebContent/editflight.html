@@ -6,9 +6,9 @@
 	initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/addflight.css">
+	<link rel="stylesheet" type="text/css" href="css/editflight.css">
 	<script type="text/javascript" src="jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="js/addflight.js"></script>
+	<script type="text/javascript" src="js/editflight.js"></script>
 
 	<title>Super Air</title>
 	<link rel="icon" href="photos/logo1.png">
@@ -21,36 +21,30 @@
 	</nav>
 	<div class="container">
 		<div class="flightInfo">
-			<h2>Create Flight</h2>
-		</div>
-		<div>
-			<p>Flight Number</p>
-		</div>
-		<div>
-			<input type="text" id="flightNumber" name="flightNumber" required>
+			<h2>Flight Info</h2>
 		</div>
 		<div>
 			<p>Departure Airport and Date</p>
 		</div>
 		<div>
-			<select id="departureAirport" name="departureAirport">
-				<option>Nikola Tesla Beograd</option>
-				<option>Atlanta USA</option>
-				<option>Heatrow London</option>
-				<option>Haneda Tokio</option>
-				<option>Charles de Gaulle Pariz</option>
-			<input type="datetime-local" id="departureDate" name="departureDate" required>
+			<select id="departureAirport" name="departureAirport" >
+				<option value="1">Nikola Tesla Beograd</option>
+				<option value="2">Atlanta USA</option>
+				<option value="3">Heatrow London</option>
+				<option value="4">Haneda Tokio</option>
+				<option value="5">Charles de Gaulle Pariz</option>
+			<input type="datetime-local" id="departureDate" name="departureDate" readonly>
 		</div>
 		<div>
 			<p>Arrival Airport and Date</p>
 		</div>
 		<div>
-			<select id="arrivalAirport" name="arrivalAirport">
-				<option>Nikola Tesla Beograd</option>
-				<option>Atlanta USA</option>
-				<option>Heatrow London</option>
-				<option>Haneda Tokio</option>
-				<option>Charles de Gaulle Pariz</option>
+			<select id="arrivalAirport" name="arrivalAirport" required>
+				<option value="1">Nikola Tesla Beograd</option>
+				<option value="2">Atlanta USA</option>
+				<option value="3">Heatrow London</option>
+				<option value="4">Haneda Tokio</option>
+				<option value="5">Charles de Gaulle Pariz</option>
 			<input type="datetime-local" id="arrivalDate" name="arrivalDate" required>
 		</div>
 		<div>
@@ -69,7 +63,7 @@
 			<p id="message" class="message"></p>
 		</div>
 		<div>
-			<button type="submit" class="create" id="create">Create</button>
+			<input type="submit" value="Submit" id="submit">
 		</div>
 		<div>
 			<button type="button" class="cancelbtn" id="cancel" onclick="btnCancel()">Cancel</button>

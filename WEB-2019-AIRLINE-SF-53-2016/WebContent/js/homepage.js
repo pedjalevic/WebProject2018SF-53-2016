@@ -40,7 +40,7 @@ $(document).ready(function() {
 				$('#signInLink').replaceWith('<a href="LogOutServlet">Sign out</a>');
 				if (data.user.role == "ADMIN") {
 					$('#home').replaceWith('<a href="adminpage.html?userName='+data.user.userName+'">Admin page</a>');
-					$('#addFlight').replaceWith('<a href="addFlight.html" id="addFlight" >Add Flight</a>');
+					$('#addFlight').replaceWith('<a href="addflight.html" id="addFlight" >Add Flight</a>');
 				}else if (data.user.role == "USER") {
 					$('#home').replaceWith('<a href="userpage.html?userName='+data.user.userName+'">My profile</a>');
 				}
