@@ -6,9 +6,9 @@
 	initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/flightpage.css">
+	<link rel="stylesheet" type="text/css" href="css/checkticket.css">
 	<script type="text/javascript" src="jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="js/flightpage.js"></script>
+	<script type="text/javascript" src="js/checkticket1.js"></script>
 
 	<title>Super Air</title>
 	<link rel="icon" href="photos/logo1.png">
@@ -16,65 +16,45 @@
 <body>
 	<nav class="topnav">
 		<a href="homepage.html" id="logo"> <img src="photos/logo1.png" class="logo" alt="logo"> <font size="22">Super Air</font></a>
+		<a href="#signout" id="signoutLink" onclick="signout()">Sign Out</a>
 		<a href="homepage.html" id="home">Home</a>
 	</nav>
 	<div class="container">
-		<div class="flightInfo">
-			<h2>Flight Info</h2>
+		<div class="signup">
+			<h2>Reservation</h2>
 		</div>
 		<div>
-			<p>Flight Number</p>
+			<p>Name</p>
 		</div>
 		<div>
-			<p id="flightNumber"></p>
+			 <input type="text" id="userName" name="userName" readonly>
 		</div>
 		<div>
-			<p>Departure Date</p>
+			<p>Price</p>
 		</div>
 		<div>
-			<p id="departureDate"></p>
+			<input type="text" id="price" name="price" readonly>
 		</div>
 		<div>
-			<p>Arrival Date</p>
+			<p>Departure Seat</p>
 		</div>
 		<div>
-			<p id="arrivalDate"></p>
+			<input type="number" min="1" id="departureSeat" name="departureSeat" required>
 		</div>
 		<div>
-			<p>Departure Airport</p>
+			<p>Returun Seat</p>
 		</div>
 		<div>
-			<p id="departureAirport"></p>
+			<input type="number" min="1" id="returnSeat" name="returnSeat" required>
+		</div>
+		<div class="signup">
+			<p id="message" class="message"></p>
 		</div>
 		<div>
-			<p>Arrival Airport</p>
+			<button type="submit" class="submit" id="submit">Reservation</button>
 		</div>
 		<div>
-			<p id="arrivalAirport"></p>
-		</div>
-		<div>
-			<p>Seat Number</p>
-		</div>
-		<div>
-			<p id="seatNumber"></p>
-		</div>
-		<div>
-			<p>Free Seat</p>
-		</div>
-		<div>
-			<p id="freeSeat"></p>
-		</div>
-		<div>
-			<p>Ticket Price</p>
-		</div>
-		<div>
-			<p id="ticketPrice"></p>
-		</div>
-		<div>
-			<input style="display: none;" type="button" id="buttonReservation" value="reservation">
-		</div>
-		<div>
-			<input style="display: none;" type="button" id="buttonBuy" value="buy">
+			<button type="button" class="cancelbtn" id="cancel" onclick="btnCancel()">Cancel</button>
 		</div>
 	</div>
 </body>

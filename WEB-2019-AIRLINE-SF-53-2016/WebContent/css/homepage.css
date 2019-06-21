@@ -130,6 +130,9 @@ aside {
 #searchAirport:hover {
   opacity: 0.6;
 }
+.flightInfo {
+  text-align: center;
+}
 article {
   float: left;
   padding: 20px;

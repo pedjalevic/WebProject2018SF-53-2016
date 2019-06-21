@@ -30,9 +30,13 @@ public class FlightServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			User loggedInUser = (User) session.getAttribute("loggedInUser");
 			Flight flight = FlightDAO.getFlight(id);
+			int freeSeats = flight.getFreeSeat() - TicketDAO.getTicketNumber(flight.getId()) - TicketDAO.getTicketNumber1(flight.getId());
+			flight.setFreeSeat(freeSeats);
+			boolean dataFlight = FlightDAO.dataFlight(flight.getId());
 			Map<String, Object> data = new HashMap<>();
-			data.put("flight", flight);
 			data.put("user", loggedInUser);
+			data.put("flight", flight);
+			data.put("dataFlight", dataFlight);
 			
 			ObjectMapper mapper = new ObjectMapper();
 			String jsonData = mapper.writeValueAsString(data);

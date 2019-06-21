@@ -1,0 +1,109 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+body{
+ background: #ffffff;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 24px;
+}
+#logo{
+  display: inline-block;
+}
+.logo {
+  margin-left: 2em;
+  height: 45px;
+  margin-top: 1px;
+}
+.topnav a:not(:first-child){
+  float: right;
+  opacity: 1;
+}
+
+.topnav a:hover {
+   opacity: 0.6;
+}
+
+.sidelogin {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+#userName,#password {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 10px;
+    display: inline-block;
+    border: none;
+    background: #ffffff;
+}
+.sidelogin a{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+input[type=submit] {
+    background: #2196F3;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 15px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    font-family: Arial;
+    font-size: 18px;
+}
+.topnav a:hover {
+   opacity: 0.6;
+}
+.bodysection{
+  height: 100%;
+}
+
+div:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+table, th, td {
+  margin-top: 1%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+.container div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 20px;
+}
+.container div button {
+  width: 50%;
+  height: 50%;
+  background-color: #2196F3;
+
+}

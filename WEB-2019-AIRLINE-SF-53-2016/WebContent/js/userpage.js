@@ -10,11 +10,13 @@
  	var editbutton = $('#editbutton');
 
  	$.get('UserServlet',{'userName':userName},function(data){
-		console.log(data.owner);
-		console.log(data.user);
+ 		console.log(data.owner);
 		username.text(data.owner.userName);
 		registrationDate.text(data.owner.registrationDate);
 		role.text(data.owner.role);
+		if (data.user.blocked == true) {
+			$('#editbutton').replaceWith('<a href="#" style="display: none;" class="btn btn-info" id="editbutton" role="button">Edit user</a>');
+		}
 		for (it in data.reservationTicket) {
 			reservationticket.append(
 						'<tr align="center">' + 

@@ -10,8 +10,7 @@ $(document).ready(function(){
 	var ticketPrice=$('#ticketPrice');
 
 	$.get('FlightServlet',{'id':id},function(data){
-		console.log(data.flight);
-		console.log(data.user);
+		console.log(data.dataFlight);
 		flightNumber.text(data.flight.flightNumber);
 		departureDate.text(data.flight.departureDate);
 		arrivalDate.text(data.flight.arrivalDate);
@@ -22,14 +21,20 @@ $(document).ready(function(){
 		ticketPrice.text(data.flight.ticketPrice);
 
 		if(data.user !=null){
-				if (data.user.role == "ADMIN")
-					$('#buttonReservation').replaceWith('<a type="button" href="editflight.html?id='+data.flight.id+'" id="buttonEdit">Edit1</a>');
-					$('#buttonBuy').replaceWith('<input type="button" id="buttonDelete" value="Delete">');
+				if (data.user.role == "ADMIN"){
+					$('#buttonReservation').replaceWith('<a type="button" class="btn btn-info" href="editflight.html?id='+data.flight.id+'" id="buttonEdit">Edit</a>');
+					$('#buttonBuy').replaceWith('<input class="btn btn-info" type="button" id="buttonDelete" value="Delete">');
+					}
+				if (data.user.role == "USER"){
+					$('#buttonReservation').replaceWith('<a type="button" class="btn btn-info" href="reservationpage.html?id='+data.flight.id+'" id="button12">Reservation</a>');
+					$('#buttonBuy').replaceWith('<a type="button" class="btn btn-info" href="buypage.html?id='+data.flight.id+'" id="button2">Buy</a>');
+					}
+				if (data.dataFlight == true) {
+					$('#button1').replaceWith('<input style="display: none;" type="button" id="button1" value="reservation">');
+					$('#button2').replaceWith('<input style="display: none;" type="button" id="button2" value="buy">');
 				}
-		else {
-				$('#buttonReservation').replaceWith('<input style="display: none;" type="button" id="button1" value="reservation">');
-				$('#buttonBuy').replaceWith('<input style="display: none;" type="button" id="button2" value="buy">');
 			}
+
 
 		$('#buttonDelete').on('click',function(event){
 
@@ -41,6 +46,16 @@ $(document).ready(function(){
 							
 						});
 					}
+			event.preventDefault();
+			return false;
+		});
+		$('#button1').on('click',function(event){
+
+			console.log(id);
+			$.get('ReservationServlet',{'id':id},function(data){
+				console.log("reservation");
+				window.location.replace('homepage.html');	
+				});
 			event.preventDefault();
 			return false;
 		});

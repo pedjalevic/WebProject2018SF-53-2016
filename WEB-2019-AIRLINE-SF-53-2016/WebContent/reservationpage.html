@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,
+	initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/reservationpage.css">
+	<script type="text/javascript" src="jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/reservationpage.js"></script>
+
+	<title>Super Air</title>
+	<link rel="icon" href="photos/logo1.png">
+</head>
+<body>
+	<nav class="topnav">
+		<a href="homepage.html" id="logo"> <img src="photos/logo1.png" class="logo" alt="logo"> <font size="22">Super Air</font></a>
+		<a href="#signout" id="signoutLink" onclick="signout()">Sign Out</a>
+		<a href="homepage.html" id="home">Home</a>
+	</nav>
+	<div class="container">
+		<table style="width:100%" class="returnTable" id="returnTable">
+			<tr>
+				<th>Flight Number</th>
+				<th>Arrival Airport</th> 
+				<th>Departure Date</th>
+				<th>Return</th>
+			</tr>
+		</table>
+		<div class="container">
+			<div>
+				<button type="button" class="noreturnbtn" id="noreturnbtn">No return ticket</button>
+			</div>
+			<div>
+				<button type="button" class="cancelbtn" id="cancel" onclick="btnCancel()">Cancel</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

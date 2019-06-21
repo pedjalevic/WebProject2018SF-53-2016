@@ -83,4 +83,24 @@
     <servlet-name>LogOutServlet</servlet-name>
     <url-pattern>/LogOutServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReservationServlet</display-name>
+    <servlet-name>ReservationServlet</servlet-name>
+    <servlet-class>servlets.ReservationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReservationServlet</servlet-name>
+    <url-pattern>/ReservationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TryServlet</display-name>
+    <servlet-name>TryServlet</servlet-name>
+    <servlet-class>servlets.TryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TryServlet</servlet-name>
+    <url-pattern>/TryServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

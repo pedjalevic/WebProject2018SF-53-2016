@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 	var userName = window.location.search.slice(1).split('&')[0].split('=')[1];
 	var name=$('#name');

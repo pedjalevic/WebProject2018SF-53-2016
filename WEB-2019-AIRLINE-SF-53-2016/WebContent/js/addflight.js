@@ -17,7 +17,7 @@ $(document).ready(function(){
   		var res30 = str2.slice(8, 10);
   		var res40 = str2.slice(5, 7);
   		var res50 = str2.slice(0, 4);
-  		var arrivalDateValue = res50 + "-" + res40 + "-" + res30 + " " + res20 + ":" + res10 + ":00";
+  		var departureDateValue = res50 + "-" + res40 + "-" + res30 + " " + res20 + ":" + res10 + ":00";
   		var str2 = arrivalDateInput.val();
   		var res10 = str2.slice(14, 16);
   		var res20 = str2.slice(11, 13);
@@ -25,7 +25,7 @@ $(document).ready(function(){
   		var res40 = str2.slice(5, 7);
   		var res50 = str2.slice(0, 4);
   		var arrivalDateValue = res50 + "-" + res40 + "-" + res30 + " " + res20 + ":" + res10 + ":00";
-		var departureDate=arrivalDateValue;
+		var departureDate=departureDateValue;
 		var arrivalDate=arrivalDateValue;
 		var flightNumber=flightNumberInput.val();
 		var ticketPrice=ticketPriceInput.val();

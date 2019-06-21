@@ -45,38 +45,41 @@
 			<label for="price1">Price:</label>
 			<br>
 	  		<input class="form-group col-xs-6 input-sm" type="number" min="0" name="Price" step="any" id="price1">
-	  		<input class="form-group col-xs-6 input-sm" type="number" min="0" name="Price2" step="any">
+	  		<input class="form-group col-xs-6 input-sm" type="number" min="0" name="Price2" step="any" id="price2">
 	  		<br><br>
 	  		<label>Departure date:</label>
 	  		<br>
-	  		<input class="form-group col-xs-6 input-sm" type="datetime-local" name="Data">
-	  		<input class="form-group col-xs-6 input-sm" type="datetime-local" name="Data2">
+	  		<input class="form-group col-xs-6 input-sm" type="datetime-local" name="Data" id="data1">
+	  		<input class="form-group col-xs-6 input-sm" type="datetime-local" name="Data2" id="data2">
 	  		<br><br>
 	  		<label>Arrival date:</label>
 	  		<br>
-	  		<input class="form-group col-xs-6 input-sm" type="datetime-local" name="Data3">
-	  		<input class="form-group col-xs-6 input-sm" type="datetime-local" name="Data4">
+	  		<input class="form-group col-xs-6 input-sm" type="datetime-local" name="Data3" id="data3">
+	  		<input class="form-group col-xs-6 input-sm" type="datetime-local" name="Data4" id="data4">
 	  		<br><br>
 	  		<label>Order by:</label>
 	  		<br>
 	  		<select class="form-group col-xs-6 input-sm" id="orderby">
-	  			<option>Flight number</option>
-	  			<option>Departure date</option>
-	  			<option>Arrival date</option>
-	  			<option>Departure airport</option>
-	  			<option>Arrival airport</option>
-	  			<option>Seat number</option>
-	  			<option>Ticket price</option>
+	  			<option value="flightNumber">Flight number</option>
+	  			<option value="departureDate">Departure date</option>
+	  			<option value="arrivalDate">Arrival date</option>
+	  			<option value="departureAirport">Departure airport</option>
+	  			<option value="arrivalAirport">Arrival airport</option>
+	  			<option value="seatNumber">Seat number</option>
+	  			<option value="ticketPrice">Ticket price</option>
 			</select>
 			<select class="form-group col-xs-6 input-sm" id="ascdes">
-				<option>Ascending</option>
-				<option>Descending</option>
+				<option value="asc">Ascending</option>
+				<option value="desc">Descending</option>
 			</select>
 			<br><br>
 			<label>Flight number:</label>
 			<br>
 			<input class="form-group col-xs-6 input-sm" type="text" name="FlightNumber" id="flightNumber">
 			<input class="form-group col-xs-6 input-sm" type="button" name="searchAirport" id="searchAirport" value="Search airports">
+			<div class="flightInfo">
+				<p id="message" class="message"></p>
+			</div>
 		</aside>
 		<article>
 			<div>
